@@ -1,6 +1,6 @@
 {
   "name": "express-extendcsp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extend the Content Security Policy on the fly (for development)",
   "main": "lib/expressExtendCsp.js",
   "scripts": {
