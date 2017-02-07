@@ -30,6 +30,11 @@ expect.addAssertion('<string|undefined> to come out as <any>', function (expect,
 
 describe('expressExtendCsp', function () {
     describe('extending the csp', function () {
+        it('should not do anything when no config is passed', function () {
+            config = undefined;
+            return expect('style-src https:', 'to come out as', 'style-src https:');
+        });
+
         it('should not do anything when config.add is not defined', function () {
             return expect('style-src https:', 'to come out as', 'style-src https:');
         });
