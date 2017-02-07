@@ -1,5 +1,10 @@
 # express-extendcsp
 
+[![NPM version](https://badge.fury.io/js/express-extendcsp.svg)](http://badge.fury.io/js/express-extendcsp)
+[![Build Status](https://travis-ci.org/papandreou/express-extendcsp.svg?branch=master)](https://travis-ci.org/papandreou/express-extendcsp)
+[![Coverage Status](https://coveralls.io/repos/papandreou/express-extendcsp/badge.svg)](https://coveralls.io/r/papandreou/express-extendcsp)
+[![Dependency Status](https://david-dm.org/papandreou/express-extendcsp.svg)](https://david-dm.org/papandreou/express-extendcsp)
+
 Express middleware for altering the Content-Security-Policy on the fly.
 Mostly useful in development when you want to make sure that your
 debugging and stylesheet injection techniques work, but without
