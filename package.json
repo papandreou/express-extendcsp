@@ -1,0 +1,48 @@
+{
+  "name": "express-extendcsp",
+  "version": "0.1.0",
+  "description": "Extend the Content Security Policy on the fly (for development)",
+  "main": "lib/expressExtendCsp.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha",
+    "travis": "npm test && npm run lint && npm run coverage && (<coverage/lcov.info coveralls || true)",
+    "coverage": "NODE_ENV=development nyc --reporter=lcov --reporter=text --all -- mocha && echo google-chrome coverage/lcov-report/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/papandreou/express-extendcsp.git"
+  },
+  "keywords": [
+    "CSP",
+    "express",
+    "server",
+    "security",
+    "content",
+    "security",
+    "policy",
+    "override",
+    "development"
+  ],
+  "author": "Andreas Lind <andreas@one.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/papandreou/express-extendcsp/issues"
+  },
+  "homepage": "https://github.com/papandreou/express-extendcsp#readme",
+  "devDependencies": {
+    "coveralls": "^2.11.16",
+    "eslint": "^3.15.0",
+    "eslint-config-onelint": "^2.0.0",
+    "express": "^4.14.1",
+    "mocha": "^3.2.0",
+    "nyc": "^10.1.2",
+    "unexpected": "^10.25.0",
+    "unexpected-express": "^8.3.3"
+  },
+  "nyc": {
+    "include": [
+      "lib/**"
+    ]
+  }
+}
