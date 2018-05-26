@@ -38,7 +38,7 @@
     "mocha": "^3.2.0",
     "nyc": "^10.1.2",
     "unexpected": "^10.25.0",
-    "unexpected-express": "^8.3.3"
+    "unexpected-express": "^10.1.0"
   },
   "nyc": {
     "include": [
