@@ -33,7 +33,7 @@
   "devDependencies": {
     "coveralls": "^3.0.1",
     "eslint": "^3.15.0",
-    "eslint-config-onelint": "^2.0.0",
+    "eslint-config-onelint": "^3.0.0",
     "express": "^4.14.1",
     "mocha": "^5.2.0",
     "nyc": "^11.8.0",
