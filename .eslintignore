@@ -1,4 +1,4 @@
-/node_modules
-/coverage
-/site-build
-/nyc_output
+/testdata/
+/node_modules/
+/coverage/
+/.nyc_output/
