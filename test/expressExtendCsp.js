@@ -1,4 +1,6 @@
-const expect = require('unexpected').use(require('unexpected-express'));
+const expect = require('unexpected')
+    .clone()
+    .use(require('unexpected-express'));
 const expressExtendCsp = require('../lib/expressExtendCsp');
 const express = require('express');
 
