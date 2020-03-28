@@ -5,9 +5,9 @@
   "main": "lib/expressExtendCsp.js",
   "scripts": {
     "lint": "eslint . && prettier --check '**/*.js'",
+    "coverage": "NODE_ENV=development nyc --reporter=lcov --reporter=text --all -- mocha && echo google-chrome coverage/lcov-report/index.html",
     "test": "mocha",
-    "ci": "npm test && npm run lint && npm run coverage",
-    "coverage": "NODE_ENV=development nyc --reporter=lcov --reporter=text --all -- mocha && echo google-chrome coverage/lcov-report/index.html"
+    "test:ci": "npm run coverage"
   },
   "repository": {
     "type": "git",
