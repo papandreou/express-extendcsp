@@ -1,15 +1,13 @@
-const expect = require('unexpected')
-  .clone()
-  .use(require('unexpected-express'));
+const expect = require('unexpected').clone().use(require('unexpected-express'));
 const expressExtendCsp = require('../lib/expressExtendCsp');
 const express = require('express');
 
 let config;
-beforeEach(function() {
+beforeEach(function () {
   config = {};
 });
 
-expect.addAssertion('<string|undefined> to come out as <any>', function(
+expect.addAssertion('<string|undefined> to come out as <any>', function (
   expect,
   subject,
   value
@@ -17,7 +15,7 @@ expect.addAssertion('<string|undefined> to come out as <any>', function(
   return expect(
     express()
       .use(expressExtendCsp(config))
-      .use(function(req, res) {
+      .use(function (req, res) {
         if (subject !== undefined) {
           res.setHeader('Content-Security-Policy', subject);
         }
@@ -28,30 +26,30 @@ expect.addAssertion('<string|undefined> to come out as <any>', function(
       request: '/',
       response: {
         headers: {
-          'Content-Security-Policy': value
-        }
-      }
+          'Content-Security-Policy': value,
+        },
+      },
     }
   );
 });
 
-describe('expressExtendCsp', function() {
-  describe('extending the csp', function() {
-    it('should not do anything when no config is passed', function() {
+describe('expressExtendCsp', function () {
+  describe('extending the csp', function () {
+    it('should not do anything when no config is passed', function () {
       config = undefined;
       return expect('style-src https:', 'to come out as', 'style-src https:');
     });
 
-    it('should not do anything when config.add is not defined', function() {
+    it('should not do anything when config.add is not defined', function () {
       return expect('style-src https:', 'to come out as', 'style-src https:');
     });
 
-    it('should not do anything when there is no Content-Security-Policy header already', function() {
+    it('should not do anything when there is no Content-Security-Policy header already', function () {
       config = { add: { styleSrc: ['somewhereovertherainbow.com'] } };
       return expect(undefined, 'to come out as', undefined);
     });
 
-    it('should add to an existing directive, array case', function() {
+    it('should add to an existing directive, array case', function () {
       config = { add: { styleSrc: ['somewhereovertherainbow.com'] } };
       return expect(
         'style-src https:',
@@ -60,7 +58,7 @@ describe('expressExtendCsp', function() {
       );
     });
 
-    it('should add to an existing directive, string case', function() {
+    it('should add to an existing directive, string case', function () {
       config = { add: { styleSrc: 'somewhereovertherainbow.com' } };
       return expect(
         'style-src https:',
@@ -69,7 +67,7 @@ describe('expressExtendCsp', function() {
       );
     });
 
-    it('should add to an existing directive, non-camel cased key', function() {
+    it('should add to an existing directive, non-camel cased key', function () {
       config = { add: { 'style-src': 'somewhereovertherainbow.com' } };
       return expect(
         'style-src https:',
@@ -78,8 +76,8 @@ describe('expressExtendCsp', function() {
       );
     });
 
-    describe('with a broken or irregular existing CSP', function() {
-      it('should tolerate a semicolon at the end', function() {
+    describe('with a broken or irregular existing CSP', function () {
+      it('should tolerate a semicolon at the end', function () {
         config = { add: { 'style-src': 'somewhereovertherainbow.com' } };
         return expect(
           'script-src *;',
@@ -88,7 +86,7 @@ describe('expressExtendCsp', function() {
         );
       });
 
-      it('should tolerate an empty directive when adding to it', function() {
+      it('should tolerate an empty directive when adding to it', function () {
         config = { add: { 'style-src': 'somewhereovertherainbow.com' } };
         return expect(
           'style-src',
@@ -97,7 +95,7 @@ describe('expressExtendCsp', function() {
         );
       });
 
-      it('should tolerate an empty directive when adding to a different one', function() {
+      it('should tolerate an empty directive when adding to a different one', function () {
         config = { add: { 'style-src': 'somewhereovertherainbow.com' } };
         return expect(
           'script-src;',
@@ -107,7 +105,7 @@ describe('expressExtendCsp', function() {
       });
     });
 
-    it("should remove the 'none' token when adding to an empty directive", function() {
+    it("should remove the 'none' token when adding to an empty directive", function () {
       config = { add: { styleSrc: ['somewhereovertherainbow.com'] } };
       return expect(
         "style-src 'none'",
@@ -116,7 +114,7 @@ describe('expressExtendCsp', function() {
       );
     });
 
-    it('should add a new directive', function() {
+    it('should add a new directive', function () {
       config = { add: { styleSrc: ['somewhereovertherainbow.com'] } };
       return expect(
         "connect-src 'self'",
@@ -125,7 +123,7 @@ describe('expressExtendCsp', function() {
       );
     });
 
-    it('should take default-src into account when adding a new directive that falls back to default-src', function() {
+    it('should take default-src into account when adding a new directive that falls back to default-src', function () {
       config = { add: { styleSrc: ['somewhereovertherainbow.com'] } };
       return expect(
         "default-src 'self'",
@@ -134,7 +132,7 @@ describe('expressExtendCsp', function() {
       );
     });
 
-    it("should handle a default-src of 'none' when adding a new directive that falls back to default-src", function() {
+    it("should handle a default-src of 'none' when adding a new directive that falls back to default-src", function () {
       config = { add: { styleSrc: ['somewhereovertherainbow.com'] } };
       return expect(
         "default-src 'none'",
@@ -143,7 +141,7 @@ describe('expressExtendCsp', function() {
       );
     });
 
-    it('should disregard default-src when adding a new directive that does not fall back to it per spec', function() {
+    it('should disregard default-src when adding a new directive that does not fall back to it per spec', function () {
       config = { add: { childSrc: ['somewhereovertherainbow.com'] } };
       return expect(
         "default-src 'self'",
