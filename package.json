@@ -4,7 +4,7 @@
   "description": "Extend the Content Security Policy on the fly (for development)",
   "main": "lib/expressExtendCsp.js",
   "scripts": {
-    "lint": "eslint . && prettier --check '**/*.js'",
+    "lint": "eslint . && prettier --check '**/*.{js,json,md}'",
     "coverage": "NODE_ENV=development nyc --reporter=lcov --reporter=text --all -- mocha && echo google-chrome coverage/lcov-report/index.html",
     "test": "mocha",
     "test:ci": "npm run coverage"
