@@ -1,3 +1,30 @@
+### v3.0.0 (2020-11-22)
+
+#### Pull requests
+
+- [#34](https://github.com/papandreou/express-extendcsp/pull/34) Upgrade eslint-config-standard to version 16.0.1 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#32](https://github.com/papandreou/express-extendcsp/pull/32) Upgrade eslint-config-standard to version 15.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#31](https://github.com/papandreou/express-extendcsp/pull/31) Upgrade prettier to version 2.1.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#30](https://github.com/papandreou/express-extendcsp/pull/30) Upgrade eslint-plugin-mocha to version 8.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#28](https://github.com/papandreou/express-extendcsp/pull/28) Upgrade eslint-plugin-mocha to version 7.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#27](https://github.com/papandreou/express-extendcsp/pull/27) Upgrade eslint to version 7.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#24](https://github.com/papandreou/express-extendcsp/pull/24) Upgrade mocha to version 7.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#23](https://github.com/papandreou/express-extendcsp/pull/23) Upgrade eslint-plugin-node to version 11.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#22](https://github.com/papandreou/express-extendcsp/pull/22) Upgrade nyc to version 15.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#21](https://github.com/papandreou/express-extendcsp/pull/21) Upgrade prettier to version 1.19.1 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#20](https://github.com/papandreou/express-extendcsp/pull/20) Upgrade eslint-plugin-node to version 10.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#19](https://github.com/papandreou/express-extendcsp/pull/19) Upgrade eslint-config-standard to version 14.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#17](https://github.com/papandreou/express-extendcsp/pull/17) Upgrade unexpected-express to version 12.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [Drop support for node.js &lt;10, add 12, 14, lint with 14 \(semver-major\)](https://github.com/papandreou/express-extendcsp/commit/8980d26b7565d78c6f2a71bdd147b06e8d385539) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Add offline-github-changelog integration + CHANGELOG.md](https://github.com/papandreou/express-extendcsp/commit/cf300da982e734bcaa71805fe4c7caba723c145f) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [prettier --write '\*\*\/\*.{js,json,md}'](https://github.com/papandreou/express-extendcsp/commit/80cc72a92f86d999c8041b168b4d24ca2e071634) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Also check \*.json and \*.md with prettier](https://github.com/papandreou/express-extendcsp/commit/18f15d5b60cf9bc68e21a7107e2622a0551b7aa9) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Update prettier to ~2.2.0](https://github.com/papandreou/express-extendcsp/commit/466cf4ebda3f102ae2cdfbc8bf31e8e1ef842108) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [+7 more](https://github.com/papandreou/express-extendcsp/compare/v2.0.0...v3.0.0)
+
 ### v2.0.0 (2019-06-23)
 
 #### Pull requests
@@ -35,4 +62,3 @@
 - [Add .travis.yml](https://github.com/papandreou/express-extendcsp/commit/8a747c8fd9ef9ec3a2ea1e37e3f6c5bbfdecde81) ([Andreas Lind](mailto:andreas@one.com))
 - [Add README badges.](https://github.com/papandreou/express-extendcsp/commit/6324df1bb0268ca74a07b35e5914f785dd5efa62) ([Andreas Lind](mailto:andreas@one.com))
 - [Initial commit.](https://github.com/papandreou/express-extendcsp/commit/1b1c220b7a8fe094c84e6b68d3e93e207b281096) ([Andreas Lind](mailto:andreas@one.com))
-
