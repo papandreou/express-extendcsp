@@ -7,7 +7,8 @@
     "lint": "eslint . && prettier --check '**/*.{js,json,md}'",
     "coverage": "NODE_ENV=development nyc --reporter=lcov --reporter=text --all -- mocha && echo google-chrome coverage/lcov-report/index.html",
     "test": "mocha",
-    "test:ci": "npm run coverage"
+    "test:ci": "npm run coverage",
+    "preversion": "offline-github-changelog --next=${npm_package_version} > CHANGELOG.md && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "express": "^4.14.1",
     "mocha": "^7.0.0",
     "nyc": "^15.0.0",
+    "offline-github-changelog": "^2.0.0",
     "prettier": "~2.2.0",
     "unexpected": "^11.0.0",
     "unexpected-express": "^12.0.0"

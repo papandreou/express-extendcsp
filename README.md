@@ -45,3 +45,7 @@ require('express')()
 
 Both camelCased and snake-cased directive names are supported, and you
 can supply the tokens to add as either a string or an array of strings.
+
+## Releases
+
+[Changelog](https://github.com/papandreou/express-extendcsp/blob/master/CHANGELOG.md)
