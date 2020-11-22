@@ -7,31 +7,32 @@ beforeEach(function () {
   config = {};
 });
 
-expect.addAssertion('<string|undefined> to come out as <any>', function (
-  expect,
-  subject,
-  value
-) {
-  return expect(
-    express()
-      .use(expressExtendCsp(config))
-      .use(function (req, res) {
-        if (subject !== undefined) {
-          res.setHeader('Content-Security-Policy', subject);
-        }
-        res.send('<!DOCTYPE html>\n<html><head></head><body>foo</body></html>');
-      }),
-    'to yield exchange',
-    {
-      request: '/',
-      response: {
-        headers: {
-          'Content-Security-Policy': value,
+expect.addAssertion(
+  '<string|undefined> to come out as <any>',
+  function (expect, subject, value) {
+    return expect(
+      express()
+        .use(expressExtendCsp(config))
+        .use(function (req, res) {
+          if (subject !== undefined) {
+            res.setHeader('Content-Security-Policy', subject);
+          }
+          res.send(
+            '<!DOCTYPE html>\n<html><head></head><body>foo</body></html>'
+          );
+        }),
+      'to yield exchange',
+      {
+        request: '/',
+        response: {
+          headers: {
+            'Content-Security-Policy': value,
+          },
         },
-      },
-    }
-  );
-});
+      }
+    );
+  }
+);
 
 describe('expressExtendCsp', function () {
   describe('extending the csp', function () {
